@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sharepoint file"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3f26c94d-308d-454c-9e05-de425ea5e1de"
+  }
+}
