@@ -1,0 +1,33 @@
+table Sheet1
+	lineageTag: b6dbc3cc-43bb-4c27-9c23-5670f409a888
+
+	column 'City '
+		dataType: string
+		lineageTag: b2a9e957-6729-4c25-9fb6-3b2c2e611eaf
+		summarizeBy: none
+		sourceColumn: "City "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Job'
+		dataType: int64
+		formatString: 0
+		lineageTag: b7b4e427-e43e-4ae0-bda1-348598a1e787
+		summarizeBy: sum
+		sourceColumn: Count of Job
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sheet1 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\v-shishetty\Documents\Power BI Desktop\DummyData.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"City ", type text}, {"Count of Job", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

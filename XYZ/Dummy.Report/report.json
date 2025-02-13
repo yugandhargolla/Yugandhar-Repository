@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "d0a87951108c3149da43",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"69d7f0725638b40a49c4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":141.73337331887703,\"y\":145.51292994071375,\"z\":0,\"width\":279.68719001591734,\"height\":279.68719001591734,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Sheet1.City \"},{\"queryRef\":\"Sum(Sheet1.Count of Job)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Sheet1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"City \"},\"Name\":\"Sheet1.City \",\"NativeReferenceName\":\"City \"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Count of Job\"}},\"Function\":0},\"Name\":\"Sum(Sheet1.Count of Job)\",\"NativeReferenceName\":\"Sum of Count of Job\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 279.69,
+          "width": 279.69,
+          "x": 141.73,
+          "y": 145.51,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

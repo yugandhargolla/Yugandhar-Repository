@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "Dummylake"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c21b7528-ca8d-9c48-44f3-fa2f21dff011"
+  }
+}
