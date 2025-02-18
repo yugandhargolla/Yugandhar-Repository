@@ -1,0 +1,100 @@
+table Customers
+	lineageTag: f4417e4d-4456-43dd-9fd2-35fe0edfc147
+
+	column CustomerID
+		dataType: string
+		lineageTag: 4fb699d2-9174-4c08-a6a3-17bb5d1699ce
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyName
+		dataType: string
+		lineageTag: 9968a53e-48b8-4a89-9dc0-2c62572fc80e
+		summarizeBy: none
+		sourceColumn: CompanyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactName
+		dataType: string
+		lineageTag: 9ea187f0-3ce0-4ff4-b234-61656f0247a6
+		summarizeBy: none
+		sourceColumn: ContactName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactTitle
+		dataType: string
+		lineageTag: c185cea8-566d-44cf-b5b7-55e5ec0a7f7c
+		summarizeBy: none
+		sourceColumn: ContactTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 66dc3c3a-0e3c-4a39-8b9d-2b2f2796f974
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 5d2c8a42-0632-4bb2-8f10-9af784eb71e3
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: a47adde7-f5a9-4080-a4e0-b159be3a2c03
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: e9c07b19-80c1-433c-adc5-9cb8e12ea50c
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 88564b55-b7d8-4823-8b71-f5b1ba08d13b
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: af108614-c82d-4e10-8940-f7221a292f86
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: 09811713-ee4a-43ba-bc7a-7eee755e3643
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customers = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/V3/Northwind/Northwind.svc/", null, [Implementation="2.0"]),
+				    Customers_table = Source{[Name="Customers",Signature="table"]}[Data]
+				in
+				    Customers_table
+

@@ -1,0 +1,14 @@
+relationship 497433a6-548e-40f3-a0ca-fee527014cff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.BirthDate
+	toColumn: LocalDateTable_31be3196-8417-4415-9580-1823af9eed94.Date
+
+relationship 47b27138-b77e-469d-b113-34571bb038a4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.HireDate
+	toColumn: LocalDateTable_f7418066-1389-498c-964f-7efe976370c8.Date
+
+relationship AutoDetected_3d9a6d97-777c-40af-98c2-6281cadd99b9
+	fromColumn: Order_Details.OrderID
+	toColumn: Order_Subtotals.OrderID
+
