@@ -1,0 +1,149 @@
+table Orders
+	lineageTag: 9b851e99-2438-457d-9c7c-ce7697feb388
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: c6847f77-17b9-43b4-9a08-2021dbdeb299
+		summarizeBy: none
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		lineageTag: 5af5c135-cc87-4633-86f9-d79bae1510f3
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: ae1a283f-00c8-4b91-8b1d-c2d7b06d1d25
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a551bbab-53e1-4ad2-adff-87aafe68f352
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		variation Variation
+			isDefault
+			relationship: 08322808-66a0-4e5d-a918-1e02b0a8a9c7
+			defaultHierarchy: LocalDateTable_360aa29a-b42e-4029-a16d-effd7f183a19.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RequiredDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68cd3017-070d-4ba4-b32c-b3d5196919c8
+		summarizeBy: none
+		sourceColumn: RequiredDate
+
+		variation Variation
+			isDefault
+			relationship: b299a013-cc5a-4669-8fc4-f1d7358b942e
+			defaultHierarchy: LocalDateTable_9f00b1fa-05b3-4413-9765-b2248482cba9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShippedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 531956e4-5323-40f9-8d9c-16c498034ba4
+		summarizeBy: none
+		sourceColumn: ShippedDate
+
+		variation Variation
+			isDefault
+			relationship: 2f4746f7-83e9-4252-a7d4-e9e79ee14b6e
+			defaultHierarchy: LocalDateTable_9c4c79ce-5098-47e9-936b-ae4600497831.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipVia
+		dataType: int64
+		formatString: 0
+		lineageTag: 9614a1bb-9dd4-410e-97c1-922cfddd59b3
+		summarizeBy: sum
+		sourceColumn: ShipVia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Freight
+		dataType: double
+		lineageTag: 811470d2-8195-4700-bab1-c79fdc4d1831
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ShipName
+		dataType: string
+		lineageTag: 07013b1b-a0e8-40cd-aa06-f393f0d119da
+		summarizeBy: none
+		sourceColumn: ShipName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipAddress
+		dataType: string
+		lineageTag: 391a9463-d153-4716-9cf4-e5214f500d65
+		summarizeBy: none
+		sourceColumn: ShipAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipCity
+		dataType: string
+		lineageTag: 287a0bbe-9d16-46d4-98c9-f3dfa3d94e7f
+		summarizeBy: none
+		sourceColumn: ShipCity
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipRegion
+		dataType: string
+		lineageTag: 4518fed5-22a9-4195-b11c-7dffe835c22a
+		summarizeBy: none
+		sourceColumn: ShipRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipPostalCode
+		dataType: string
+		lineageTag: a9d1e57b-f5b3-41fe-806b-a3ee98a00e1f
+		summarizeBy: none
+		sourceColumn: ShipPostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipCountry
+		dataType: string
+		lineageTag: 2c0cec2a-1c31-4dd4-9fe3-b45f0ae40c55
+		summarizeBy: none
+		sourceColumn: ShipCountry
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc/", null, [Implementation="2.0"]),
+				    Orders_table = Source{[Name="Orders",Signature="table"]}[Data]
+				in
+				    Orders_table
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,103 @@
+table Products
+	lineageTag: 698457db-eb03-422e-b3e6-962134e3efcb
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 861fbf4a-8d9b-47f8-b394-11a794b9d2ae
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: f5a02337-3afe-4292-af5a-becbb002b892
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupplierID
+		dataType: int64
+		formatString: 0
+		lineageTag: de91a557-5cd4-4ecb-97e9-d5ee726a04dd
+		summarizeBy: count
+		sourceColumn: SupplierID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: f2ff2c4c-2d04-4671-b618-71c4405ab7a4
+		summarizeBy: none
+		sourceColumn: CategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuantityPerUnit
+		dataType: string
+		lineageTag: 1c4530ae-0540-45c3-94f5-5d58adcc5b6e
+		summarizeBy: none
+		sourceColumn: QuantityPerUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 68db543d-d71f-4885-94fe-45182d6b9951
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitsInStock
+		dataType: int64
+		formatString: 0
+		lineageTag: aa512a59-24c8-475e-aa65-6a5afa3526a7
+		summarizeBy: sum
+		sourceColumn: UnitsInStock
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitsOnOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a94ae23-013f-4a59-8846-daeedb6fbf1a
+		summarizeBy: sum
+		sourceColumn: UnitsOnOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReorderLevel
+		dataType: int64
+		formatString: 0
+		lineageTag: e79fe4d4-8229-44a5-a9b7-19e5aafd402c
+		summarizeBy: sum
+		sourceColumn: ReorderLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discontinued
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d3c0ca4a-f90c-43b7-813f-3bbb3d687200
+		summarizeBy: none
+		sourceColumn: Discontinued
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Products = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc/", null, [Implementation="2.0"]),
+				    Products_table = Source{[Name="Products",Signature="table"]}[Data]
+				in
+				    Products_table
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Categories","Customers","Employees","Order_Details","Order_Details_Extendeds","Order_Subtotals","Orders","Products"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1452.0 (24.11)
+
+ref table DateTableTemplate_d1969693-b66e-4701-8ba8-6cb1e9539b36
+ref table Categories
+ref table Customers
+ref table Employees
+ref table LocalDateTable_a1b13a21-1cd4-4752-8d70-ceeb8882de92
+ref table LocalDateTable_8108cd89-0739-474f-b165-a4bb2ab73bf6
+ref table Order_Details
+ref table Order_Details_Extendeds
+ref table Order_Subtotals
+ref table Orders
+ref table LocalDateTable_360aa29a-b42e-4029-a16d-effd7f183a19
+ref table LocalDateTable_9f00b1fa-05b3-4413-9765-b2248482cba9
+ref table LocalDateTable_9c4c79ce-5098-47e9-936b-ae4600497831
+ref table Products
+
+ref cultureInfo en-US
+

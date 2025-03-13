@@ -1,0 +1,31 @@
+table Order_Subtotals
+	lineageTag: 13ede01d-e7e3-43c5-9e99-58d35a1f09cd
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 79e12d16-1fb7-4d86-be4b-15045be980f9
+		summarizeBy: none
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subtotal
+		dataType: double
+		lineageTag: 9e5b8e47-5ff7-42e7-ac2c-602b03cbd090
+		summarizeBy: sum
+		sourceColumn: Subtotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Order_Subtotals = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc/", null, [Implementation="2.0"]),
+				    Order_Subtotals_table = Source{[Name="Order_Subtotals",Signature="table"]}[Data]
+				in
+				    Order_Subtotals_table
+

@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Report",
-    "displayName": "Sharepoint file"
+    "displayName": "Test_Report"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "97086d0c-d150-415b-af9a-6cbdcb5dc5f9"
+    "logicalId": "3a19be8b-5121-9ea1-474f-3c2bfbc331cd"
   }
 }

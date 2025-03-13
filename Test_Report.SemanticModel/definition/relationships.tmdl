@@ -1,0 +1,59 @@
+relationship 71ce76d5-d569-4483-bd58-b881a6cadccb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.BirthDate
+	toColumn: LocalDateTable_a1b13a21-1cd4-4752-8d70-ceeb8882de92.Date
+
+relationship 2baa16c7-b575-4eee-b1bf-4bddf37743d8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.HireDate
+	toColumn: LocalDateTable_8108cd89-0739-474f-b165-a4bb2ab73bf6.Date
+
+relationship 08322808-66a0-4e5d-a918-1e02b0a8a9c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.OrderDate
+	toColumn: LocalDateTable_360aa29a-b42e-4029-a16d-effd7f183a19.Date
+
+relationship b299a013-cc5a-4669-8fc4-f1d7358b942e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.RequiredDate
+	toColumn: LocalDateTable_9f00b1fa-05b3-4413-9765-b2248482cba9.Date
+
+relationship 2f4746f7-83e9-4252-a7d4-e9e79ee14b6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.ShippedDate
+	toColumn: LocalDateTable_9c4c79ce-5098-47e9-936b-ae4600497831.Date
+
+relationship AutoDetected_f183a683-7a98-444e-ac0e-d3e48b318166
+	fromColumn: Products.CategoryID
+	toColumn: Categories.CategoryID
+
+relationship AutoDetected_4d378e6e-7399-4e9c-a82c-81437994738a
+	fromColumn: Orders.CustomerID
+	toColumn: Customers.CustomerID
+
+relationship AutoDetected_c0712aae-fe6b-4e88-9077-cbacfc3fd9e5
+	fromColumn: Orders.EmployeeID
+	toColumn: Employees.EmployeeID
+
+relationship AutoDetected_0e2d1a6e-c386-4f1d-970d-b96748ecd570
+	fromColumn: Order_Details.OrderID
+	toColumn: Order_Subtotals.OrderID
+
+relationship AutoDetected_8856ec45-6f6e-413b-980a-261592f31056
+	fromColumn: Order_Details_Extendeds.OrderID
+	toColumn: Order_Subtotals.OrderID
+
+relationship AutoDetected_c1ac5d00-39ee-4495-98f6-17b3c4923edf
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Orders.OrderID
+	toColumn: Order_Subtotals.OrderID
+
+relationship AutoDetected_8e20e183-2738-4759-bb4e-b46ca1147794
+	fromColumn: Order_Details.ProductID
+	toColumn: Products.ProductID
+
+relationship AutoDetected_3e057c4c-971b-4413-b32e-d66120d5e45a
+	fromColumn: Order_Details_Extendeds.ProductID
+	toColumn: Products.ProductID
+
