@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "VikasReport1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6ad27946-33a6-912a-4a17-e9909fc53e64"
+  }
+}

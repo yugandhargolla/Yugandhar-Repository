@@ -1,0 +1,5 @@
+relationship 89670a71-b58c-4795-b666-bf1274924cea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'date table'.'Date cloumn'
+	toColumn: LocalDateTable_af69fa7c-3aac-4aa1-b7ca-09cb5dd4bc0c.Date
+

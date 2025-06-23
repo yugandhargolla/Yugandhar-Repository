@@ -1,0 +1,75 @@
+table 'Dates to test'
+	lineageTag: d5d3b5ed-c2c6-4091-85d2-2c77e67ebebf
+
+	column 'General Date'
+		formatString: General Date
+		lineageTag: bb4327ad-210d-4874-a369-5b24db1e9617
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 482aa025-265b-4e2c-8d8d-6ed869da76b7
+			defaultHierarchy: LocalDateTable_6256b82f-7cf7-4fd0-98e3-bbc27ef92595.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 3368b939-8022-49c2-9c96-009afe6492bc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 906dc05f-618c-472d-944d-614816ec00a9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short Date' = 'Dates to test'[General Date]
+		formatString: Short Date
+		lineageTag: f183b0e1-e429-47b7-9487-4c3e7b53152e
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: e2e0a15f-99f2-4376-ab31-146a8d56b45c
+			defaultHierarchy: LocalDateTable_fe32af61-5e2f-4a7e-9846-03155c59187f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Long Date' = 'Dates to test'[General Date]
+		formatString: Long Date
+		lineageTag: 06ca5381-7150-4b4a-b746-d45a5d5d43b6
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 5538755f-240f-4ad2-afb0-35c2a42930ee
+			defaultHierarchy: LocalDateTable_86f23c6c-42a0-412f-a1ef-9de98825052b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Dates to test' = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS (
+				        CALENDAR(
+				            DATE(01/01/2025,1,1),
+				            DATE(31/01/2025,12,31)),
+				        "Year", YEAR ([Date]),
+				        "Month",FORMAT([Date],"mmm")
+				)
+
+	annotation PBI_Id = 5163754b447745bd8345cdc723f4d35c
+

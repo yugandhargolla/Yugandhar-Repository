@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.137.1102.0 (24.10)
+
+annotation PBI_QueryOrder = ["Measures table","Measues table"]
+
+ref table 'date table'
+ref table DateTableTemplate_8e47a8bb-0706-4642-9a5b-88f22f5e59d8
+ref table LocalDateTable_af69fa7c-3aac-4aa1-b7ca-09cb5dd4bc0c
+ref table 'Measues table'
+
+ref cultureInfo en-US
+

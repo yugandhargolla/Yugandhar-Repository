@@ -1,0 +1,99 @@
+table 'date table'
+	lineageTag: a3cbf8b9-a2d0-4ac3-be1a-9dfb99ecedc7
+
+	column 'Date cloumn'
+		formatString: dd/mm/yyyy
+		lineageTag: f3cca629-6f82-438d-acdd-017ba6586b3f
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 89670a71-b58c-4795-b666-bf1274924cea
+			defaultHierarchy: LocalDateTable_af69fa7c-3aac-4aa1-b7ca-09cb5dd4bc0c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month number' = MONTH('date table'[Date cloumn].[Date])
+		formatString: 0
+		lineageTag: da700113-5f6e-46a1-9940-4afeff612704
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week day' = WEEKDAY('date table'[Date cloumn].[Date],1)
+		formatString: 0
+		lineageTag: b66cc5e8-43d2-4e32-ac9f-17744545a261
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Number' = WEEKNUM('date table'[Date cloumn].[Date],1)
+		formatString: 0
+		lineageTag: 29a187ea-a530-4d61-bb43-b71aee4b896a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month short name' = FORMAT('date table'[Date cloumn].[Date],"MMM")
+		lineageTag: 371dc436-8829-4e28-960d-4ecd04c4e266
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month name' = FORMAT('date table'[Date cloumn].[Date],"MMMM")
+		lineageTag: 98ab0bd9-e729-4236-b213-4f04bdb0bd1a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekdaty short name' = FORMAT('date table'[Date cloumn],"DDD")
+		lineageTag: 5a48f81d-5607-427f-aadd-ee9408997057
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekday name' = FORMAT('date table'[Date cloumn].[Date],"DDDD")
+		lineageTag: f2cc9d1d-b58f-40e4-bf8a-c0857528ec42
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column concate1 = CONCATENATE('date table'[Month short name],'date table'[Weekdaty short name])
+		lineageTag: cf938681-9062-4729-b863-1dab39cd1420
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Concate2 = CONCATENATE(CONCATENATE('date table'[Month short name],"-"),'date table'[Weekdaty short name])
+		lineageTag: 5f10da12-2640-4b45-bc3c-5ef54f33ffb7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Left = LEFT('date table'[Month name],4)
+		lineageTag: 201c1914-c0cb-41e8-9d9e-b454cbe766ec
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column right = RIGHT('date table'[Month name],3)
+		lineageTag: a8ff0808-89a5-43b3-adb2-ed65c3c7d076
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column middle = MID('date table'[Month name],2,3)
+		lineageTag: e9cfaa36-13c0-4b6c-90d4-37161807f914
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'date table' = calculated
+		mode: import
+		source = CALENDAR(DATE(2024,01,01),DATE(2025,01,01))
+
+	annotation PBI_Id = bbc511a003ed474794b0b95f48b620f1
+

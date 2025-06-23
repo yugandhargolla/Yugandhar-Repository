@@ -1,0 +1,15 @@
+relationship 482aa025-265b-4e2c-8d8d-6ed869da76b7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dates to test'.'General Date'
+	toColumn: LocalDateTable_6256b82f-7cf7-4fd0-98e3-bbc27ef92595.Date
+
+relationship e2e0a15f-99f2-4376-ab31-146a8d56b45c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dates to test'.'Short Date'
+	toColumn: LocalDateTable_fe32af61-5e2f-4a7e-9846-03155c59187f.Date
+
+relationship 5538755f-240f-4ad2-afb0-35c2a42930ee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dates to test'.'Long Date'
+	toColumn: LocalDateTable_86f23c6c-42a0-412f-a1ef-9de98825052b.Date
+
