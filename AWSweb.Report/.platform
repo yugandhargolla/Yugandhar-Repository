@@ -1,12 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "KQLDatabase",
-    "displayName": "ev",
-    "description": "ev"
+    "type": "Report",
+    "displayName": "AWSweb"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "cb921f7e-6706-ac11-49e4-8a61f1f4b8f7"
+    "logicalId": "fa6599fb-5693-b498-4438-f3e0cce93ce1"
   }
 }

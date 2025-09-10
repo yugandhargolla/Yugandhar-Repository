@@ -1,12 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Notebook",
-    "displayName": "Notebook 2",
-    "description": "New notebook"
+    "type": "SemanticModel",
+    "displayName": "AWSweb"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "d09380d9-745e-b6dd-4bb5-4ba308e63ccb"
+    "logicalId": "f6ddef6a-fd2b-9026-4ab6-7faf88f7a567"
   }
 }

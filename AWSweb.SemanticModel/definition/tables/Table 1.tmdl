@@ -1,0 +1,49 @@
+table 'Table 1'
+	lineageTag: 7495c996-c7d3-43bd-9df5-4a852d0492e0
+
+	column Column1
+		dataType: string
+		lineageTag: b7f0b62e-8312-4a5a-a91d-2c0d995065d3
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: d43e0511-ffcd-414e-ad78-869f5ba631e4
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 4610ed57-a41b-4641-918d-5bc75cd197ec
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: b43745d4-3f35-4fe7-8925-3f586a2bf3e9
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Table 1' = m
+		mode: import
+		source =
+				let
+				    Source = Web.Contents("https://docs.aws.amazon.com/ARG/latest/userguide/supported-resources.html"),
+				    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", "DIV.table-container:nth-child(10) > DIV.table-contents > TABLE > * > TR > :nth-child(1)"}, {"Column2", "DIV.table-container:nth-child(10) > DIV.table-contents > TABLE > * > TR > :nth-child(2)"}, {"Column3", "DIV.table-container:nth-child(10) > DIV.table-contents > TABLE > * > TR > :nth-child(3)"}, {"Column4", "DIV.table-container:nth-child(10) > DIV.table-contents > TABLE > * > TR > :nth-child(4)"}}, [RowSelector="DIV.table-container:nth-child(10) > DIV.table-contents > TABLE > * > TR"]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Table From Html",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
