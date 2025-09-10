@@ -1,0 +1,14 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "c0766505-55e8-40e8-a762-2b5d5933da29": {
+      "queryId": "cc98addc-9260-4cc5-8ab0-3e499b7659b5",
+      "queryName": "c0766505-55e8-40e8-a762-2b5d5933da29"
+    }
+  },
+  "connections": []
+}
