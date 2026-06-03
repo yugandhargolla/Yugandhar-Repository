@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.70\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU02\",\"version\":{\"visual\":\"2.6.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU02",
+            "path": "BaseThemes/CY26SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "a0658ad4abe300f1f7a0",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"b4f2cd60fb18b4bd558c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.448891554591802,\"y\":0,\"z\":0,\"width\":967.5664951902005,\"height\":591.5006113174468,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Employees.Country\"},{\"queryRef\":\"Employees.HireDate.Variation.Date Hierarchy.Year\"},{\"queryRef\":\"Employees.HireDate.Variation.Date Hierarchy.Quarter\"},{\"queryRef\":\"Employees.HireDate.Variation.Date Hierarchy.Month\"},{\"queryRef\":\"Employees.HireDate.Variation.Date Hierarchy.Day\"},{\"queryRef\":\"Employees.BirthDate.Variation.Date Hierarchy.Year\"},{\"queryRef\":\"Employees.BirthDate.Variation.Date Hierarchy.Quarter\"},{\"queryRef\":\"Employees.BirthDate.Variation.Date Hierarchy.Month\"},{\"queryRef\":\"Employees.BirthDate.Variation.Date Hierarchy.Day\"},{\"queryRef\":\"Employees.City\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"Employees\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Country\"},\"Name\":\"Employees.Country\",\"NativeReferenceName\":\"Country\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"HireDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"Employees.HireDate.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"HireDate Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"HireDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Quarter\"},\"Name\":\"Employees.HireDate.Variation.Date Hierarchy.Quarter\",\"NativeReferenceName\":\"HireDate Quarter\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"HireDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"Employees.HireDate.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"HireDate Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"HireDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Day\"},\"Name\":\"Employees.HireDate.Variation.Date Hierarchy.Day\",\"NativeReferenceName\":\"HireDate Day\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"BirthDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"Employees.BirthDate.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"BirthDate Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"BirthDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Quarter\"},\"Name\":\"Employees.BirthDate.Variation.Date Hierarchy.Quarter\",\"NativeReferenceName\":\"BirthDate Quarter\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"BirthDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"Employees.BirthDate.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"BirthDate Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Name\":\"Variation\",\"Property\":\"BirthDate\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Day\"},\"Name\":\"Employees.BirthDate.Variation.Date Hierarchy.Day\",\"NativeReferenceName\":\"BirthDate Day\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"City\"},\"Name\":\"Employees.City\",\"NativeReferenceName\":\"City\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 591.50,
+          "width": 967.57,
+          "x": 9.45,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

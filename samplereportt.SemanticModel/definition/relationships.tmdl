@@ -1,0 +1,10 @@
+relationship 3f5529d0-d883-4de5-b982-91d3e455046a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.BirthDate
+	toColumn: LocalDateTable_864df195-fdf5-4128-b831-f679142577d5.Date
+
+relationship eb874604-0941-4027-a84c-9593dd59f4e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.HireDate
+	toColumn: LocalDateTable_28a105ca-7018-4450-bc28-ca8bbcc44d3d.Date
+

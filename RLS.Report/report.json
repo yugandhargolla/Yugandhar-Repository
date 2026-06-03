@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.69\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU12\",\"version\":{\"visual\":\"2.5.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU12",
+            "path": "BaseThemes/CY25SU12.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "874da25ff93ed4cb9b25",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"13660ddc9bd614adeacc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.448891554591802,\"y\":0,\"z\":0,\"width\":631.1859558467324,\"height\":436.53878982214127,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"financials.Country\"},{\"queryRef\":\"Sum(financials.COGS)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Country\"},\"Name\":\"financials.Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"COGS\"}},\"Function\":0},\"Name\":\"Sum(financials.COGS)\",\"NativeReferenceName\":\"Sum of COGS\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"COGS\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 436.54,
+          "width": 631.19,
+          "x": 9.45,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

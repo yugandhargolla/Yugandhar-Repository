@@ -1,0 +1,168 @@
+table Employees
+	lineageTag: ebd45bf7-9188-44fb-a37f-d6c072ee80c5
+
+	column EmployeeID
+		dataType: int64
+		formatString: 0
+		lineageTag: 54dbaab7-938d-4b2a-a111-c5270b911f0a
+		summarizeBy: count
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 41b4e49d-0b94-4572-a269-8ea33f4bc79d
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: f72d4250-9f83-4593-b0a3-fbf86ed9ea23
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 4fe83114-94dc-4bc3-af47-f29be9e777b1
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column TitleOfCourtesy
+		dataType: string
+		lineageTag: f6d3460d-e81c-4a67-856a-3e66362301bc
+		summarizeBy: none
+		sourceColumn: TitleOfCourtesy
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ba2bca91-f6b2-4594-af2e-81b13715c3cd
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		variation Variation
+			isDefault
+			relationship: 22bb0053-afac-44c7-97be-0ee7bf8616c0
+			defaultHierarchy: LocalDateTable_cad32011-f805-4de9-91b5-4393caf0f1c9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column HireDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c62e2226-24f6-4acf-9cae-9789db6e3e97
+		summarizeBy: none
+		sourceColumn: HireDate
+
+		variation Variation
+			isDefault
+			relationship: 83f202ab-a593-4efa-825d-983f5014f474
+			defaultHierarchy: LocalDateTable_edb885e9-c54d-4f87-bd79-93aca9bc8e42.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 30be3ffb-fb5b-4bda-bd8e-2514fe5d4cf3
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: f6a4c51b-84b9-4c7b-afa6-ac65e0a4dea7
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: fd003a49-4338-4833-95a7-1c1f261e5cff
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 81719a7a-fd88-463b-99cd-a4f6f0be52fc
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 1517d17a-7abe-40e9-b916-823ff39fa893
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomePhone
+		dataType: string
+		lineageTag: 08d8ae1e-aefe-4b45-a4c8-d2e4d5922056
+		summarizeBy: none
+		sourceColumn: HomePhone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Extension
+		dataType: string
+		lineageTag: 08f2d0e9-ac32-4a67-a88d-84f06fd4c611
+		summarizeBy: none
+		sourceColumn: Extension
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 1f2ac07e-74c4-4173-ae96-6fd1fac00a1a
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReportsTo
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e065634-2b1b-4321-9491-ca03f8ef170a
+		summarizeBy: sum
+		sourceColumn: ReportsTo
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhotoPath
+		dataType: string
+		lineageTag: f44fde70-e115-44c6-8930-f5213e25762d
+		summarizeBy: none
+		sourceColumn: PhotoPath
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Employees = m
+		mode: import
+		source =
+				let
+				    Source = OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc/", null, [Implementation="2.0"]),
+				    Employees_table = Source{[Name="Employees",Signature="table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Employees_table,{{"BirthDate", type datetime}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [BirthDate] >= RangeStart and [BirthDate] < RangeEnd)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

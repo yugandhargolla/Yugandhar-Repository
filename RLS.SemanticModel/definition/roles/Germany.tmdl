@@ -1,0 +1,7 @@
+role Germany
+	modelPermission: read
+
+	tablePermission financials = [Country] == "Canada" && [Country] == "Germany"
+
+	annotation PBI_Id = 829ff7c824a945639462d297888f684f
+

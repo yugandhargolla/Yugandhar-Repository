@@ -1,0 +1,18 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Employees","Order_Details"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table Employees
+ref table DateTableTemplate_52654757-79d1-4470-a97b-1f0f0318f9e6
+ref table LocalDateTable_864df195-fdf5-4128-b831-f679142577d5
+ref table LocalDateTable_28a105ca-7018-4450-bc28-ca8bbcc44d3d
+ref table Order_Details
+

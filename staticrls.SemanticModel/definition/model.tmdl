@@ -1,0 +1,21 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["financials"]
+
+ref table financials
+ref table DateTableTemplate_b4b166c5-08ee-49b2-b429-0a18b5fb8f13
+ref table LocalDateTable_265d854b-1a8f-4971-9957-a7b1ca38a25a
+
+ref role Canada
+ref role France
+
+ref cultureInfo en-IN
+

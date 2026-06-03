@@ -1,0 +1,61 @@
+table Order_Details
+	lineageTag: 42e2eb8b-8c65-4f62-9073-4dc0bb6f20c0
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d6e4f96-971e-4054-acaf-8c4d77786e31
+		summarizeBy: count
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: 468cb363-d99b-47d0-9581-e575548f6788
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 5613af26-25df-4e66-bfd5-7f911d90ab2c
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 9bcbc657-5b76-4df4-aa90-f26e4163972f
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		lineageTag: fbb45feb-6c82-46f6-80f0-fc93d5679a7b
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Order_Details = m
+		mode: import
+		source =
+				let
+				  Source = OData.Feed("https://services.odata.org/V4/Northwind/Northwind.svc/", null, [Implementation = "2.0"]),
+				  #"Navigation 1" = Source{[Name = "Order_Details", Signature = "table"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

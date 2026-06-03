@@ -1,0 +1,19 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Employees","RangeStart","RangeEnd"]
+
+ref table Employees
+ref table DateTableTemplate_2af4535f-fecc-4db8-86f1-4d6a8f386db6
+ref table LocalDateTable_cad32011-f805-4de9-91b5-4393caf0f1c9
+ref table LocalDateTable_edb885e9-c54d-4f87-bd79-93aca9bc8e42
+
+ref cultureInfo en-IN
+

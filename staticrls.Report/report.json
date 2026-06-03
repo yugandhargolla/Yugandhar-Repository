@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.70\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU02\",\"version\":{\"visual\":\"2.6.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU02",
+            "path": "BaseThemes/CY26SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "262a562bc30a662240bc",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0f8e7ed9aa1100dba2c7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.448891554591802,\"y\":0,\"z\":0,\"width\":918.4322591063232,\"height\":557.4846017209163,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"financials.Country\"},{\"queryRef\":\"Sum(financials.Gross Sales)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Country\"},\"Name\":\"financials.Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gross Sales\"}},\"Function\":0},\"Name\":\"Sum(financials.Gross Sales)\",\"NativeReferenceName\":\"Sum of Gross Sales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gross Sales\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 557.48,
+          "width": 918.43,
+          "x": 9.45,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
