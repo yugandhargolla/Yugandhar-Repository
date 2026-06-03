@@ -1,0 +1,43 @@
+{
+  "config": "{\"version\":\"5.73\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU05\",\"version\":{\"visual\":\"2.9.0\",\"report\":\"3.3.0\",\"page\":\"2.3.1\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]},\"creationSource\":\"QuickCreate\"}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU05",
+            "path": "BaseThemes/CY26SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "3e6f28296d02e2823629",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"6d7a7f50b929067a3067\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"CountNonNull(Categories.CategoryID)\"}],\"Category\":[{\"queryRef\":\"Categories.CategoryName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Categories\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CategoryID\"}},\"Function\":5},\"Name\":\"CountNonNull(Categories.CategoryID)\",\"NativeReferenceName\":\"Count of CategoryID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CategoryName\"},\"Name\":\"Categories.CategoryName\",\"NativeReferenceName\":\"CategoryName\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CategoryID\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "queryBinary": "H4sIAAAAAAAEAMWTwU7DMAyGX2XyCaQKtQguvbFuQwgxxobggHaIUq8EtUnlJkBV5d1J0sI6ATckbrFj//9Xx+0gU1XFZN5A+tTBBt1ZC35nkNoZ02zzzGocSiDtIFz4wwNSI5SE9DSCBakqtC9ZhZAChwjmTka7SsiYxkKRwMZl79vaFcR2GzmrErkObRdFQVgwHfQ6mL/XhE0zRJkqTfVDfqMMcVzjbh8Ea2sjWJGqkcb27dUs3CyM5L3PuYsG3kwZqZdKLk1ZHu15T/a9x+CLtXj1hkgoOY57J2o3GRtFf4YdXEak3+HCza90BzJu6reUI03bMPaZIByG4R7xEPOfnsTarctMhcyFLLzKikTF+o27JGVql+431em99PQ+jqNkG1r9zq4xN/yT3CcePK9DOYvGeo/ORb313+PeENIkjmPrib52O7F+LsiNV7tBTYI318L/CYkn/QB+QT0iPQMAAA==",
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
